@@ -86,4 +86,12 @@ interface Coord {
 }
 
 
-// 
+// children prop
+export type InfoBoxProps = {
+  children: React.ReactNode;
+}
+
+// Date Info Component Prop Type
+export type DateInfoProp = {
+  dateObj:Date;
+}
