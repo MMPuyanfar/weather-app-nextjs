@@ -95,3 +95,7 @@ export type InfoBoxProps = {
 export type DateInfoProp = {
   dateObj:Date;
 }
+
+export type WeatherIconProp = {
+  iconName: string;
+}
