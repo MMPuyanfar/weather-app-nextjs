@@ -4,20 +4,21 @@ import { FiDroplet } from "react-icons/fi";
 import { ImMeter } from "react-icons/im";
 import { LuEye, LuSunrise, LuSunset } from "react-icons/lu";
 import { MdAir } from "react-icons/md";
+import {
+  SingleWeatherDetailProps,
+  WeatherDetailsProps,
+} from "./types";
 
-type SingleWeatherDetailProps = {
-  info: string;
-  icon: React.ReactNode;
-  value: string;
-};
-function SingleWeatherDetail(
-  props: SingleWeatherDetailProps
-) {
+function SingleWeatherDetail({
+  icon,
+  info,
+  value,
+}: SingleWeatherDetailProps) {
   return (
     <div className="flex flex-col justify-between gap-2 items-center text-xs font-semibold text-black/80">
-      <p className="whitespace-nowrap">{props.info}</p>
-      <div className="text-3xl">{props.icon}</div>
-      <p>{props.value}</p>
+      <p className="whitespace-nowrap">{info}</p>
+      <div className="text-3xl">{icon}</div>
+      <p>{value}</p>
     </div>
   );
 }
@@ -25,14 +26,6 @@ function SingleWeatherDetail(
 // creating a row of weather information using 6 SingleWeatherDetail,
 // including Visibility, Humidity, Wind Speed, Air Pressure, Sunrise, Sunset
 
-type WeatherDetailsProps = {
-  visibility: number;
-  humidity: number;
-  windSpeed: number;
-  airPressure: number;
-  sunrise: number;
-  sunset: number;
-};
 export default function WeatherDetails({
   visibility,
   humidity,

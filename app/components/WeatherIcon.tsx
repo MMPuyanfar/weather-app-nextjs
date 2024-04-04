@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { WeatherIconProp } from "./types";
+import {type WeatherIconProp } from "./types";
 
 export default function WeatherIcon({iconName}: WeatherIconProp) {
   return (

@@ -13,7 +13,6 @@ export type SearchBarProps = {
   onSubmit: FormEventHandler<HTMLFormElement> | undefined;
 };
 
-
 // Weather API response type declaration
 
 export interface WeatherAPI_Res_Type {
@@ -24,7 +23,7 @@ export interface WeatherAPI_Res_Type {
   city: City;
 }
 
-interface List {
+export interface List {
   dt: number;
   main: Main;
   weather: Weather[];
@@ -85,17 +84,79 @@ interface Coord {
   lon: number;
 }
 
-
 // children prop
 export type InfoBoxProps = {
   children: React.ReactNode;
-}
+};
 
 // Date Info Component Prop Type
 export type DateInfoProp = {
-  dateObj:Date;
-}
+  dateObj: Date;
+};
 
 export type WeatherIconProp = {
   iconName: string;
+};
+
+export type SingleWeatherDetailProps = {
+  info: string;
+  icon: React.ReactNode;
+  value: string;
+};
+
+export interface WeatherDetailsProps {
+  visibility: number;
+  humidity: number;
+  windSpeed: number;
+  airPressure: number;
+  sunrise: number;
+  sunset: number;
+}
+
+export interface ForecastWeatherDetailsProps
+  extends WeatherDetailsProps {
+  weatherIcon: string;
+  date: string;
+  day: string;
+  temp: number;
+  feelsLike: number;
+  tempMin: number;
+  tempMax: number;
+  description: string;
+}
+
+
+export interface CityResponse {
+  data: CitySuggest
+  status: number
+  statusText: string
+  headers: any
+  config: any
+  request: any
+}
+export interface CitySuggest {
+  message: string
+  cod: string
+  count: number
+  list: CityDetailsList[]
+}
+
+export interface CityDetailsList {
+  id: number
+  name: string
+  coord: any
+  main: any
+  dt: number
+  wind: any
+  sys: any
+  rain: any
+  snow: any
+  clouds: any
+  weather: any
+}
+
+export interface SuggestionBoxProps {
+  suggestion: string[];
+  handleSuggestClick: (item: string) => void;
+  error: string;
 }

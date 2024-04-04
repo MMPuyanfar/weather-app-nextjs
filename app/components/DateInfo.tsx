@@ -1,5 +1,5 @@
 import { getDayOfMonth, getMonthNumber, getWeekDay } from "../helper";
-import { DateInfoProp } from "./types";
+import {type DateInfoProp } from "./types";
 
 export default function DateInfo(prop:DateInfoProp) {
   return (

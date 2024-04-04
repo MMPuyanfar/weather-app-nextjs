@@ -11,7 +11,8 @@ export default function (props: SearchBarProps) {
       {/* https://api.openweathermap.org/data/2.5/forecast?q=tehran&appid=e8088829b0d4947e09ae641493599950&cnt=40 */}
       <input
         type="text"
-        name="searchBar"
+        spellCheck = 'false'
+        name="city"
         value={props.value}
         onChange={props.onChange}
         placeholder="Search location..."
