@@ -13,7 +13,7 @@ export default function SearchBox(props: SearchBarProps) {
       <input
         type="text"
         spellCheck = 'false'
-        autoComplete="false"
+        autoComplete="off"
         name="city"
         value={props.value}
         onChange={props.onChange}
