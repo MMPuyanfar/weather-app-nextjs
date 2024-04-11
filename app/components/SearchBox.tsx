@@ -7,11 +7,13 @@ export default function SearchBox(props: SearchBarProps) {
       action=""
       className="flex relative items-center justify-center h-10"
       onSubmit={props.onSubmit}
+      autoComplete="off"
     >
       {/* https://api.openweathermap.org/data/2.5/forecast?q=tehran&appid=e8088829b0d4947e09ae641493599950&cnt=40 */}
       <input
         type="text"
         spellCheck = 'false'
+        autoComplete="false"
         name="city"
         value={props.value}
         onChange={props.onChange}
