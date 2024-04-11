@@ -32,11 +32,9 @@ export default function WeatherNavbar() {
         const res: CityResponse = await axios.get(
           `http://api.openweathermap.org/data/2.5/find?q=${value}&appid=e8088829b0d4947e09ae641493599950`
         );
-        console.log(res);
         const suggest = res.data.list.map(
           (item) => item.name
         );
-        console.log(suggest);
         setSuggestion(suggest);
         setError("");
         setShowSuggest(true);
