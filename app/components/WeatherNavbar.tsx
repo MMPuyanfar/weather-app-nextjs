@@ -51,10 +51,14 @@ export default function WeatherNavbar() {
   }
 
   function handleSuggestClick(value: string) {
-    setCity(value);
-    setCityNameDisplay(value);
-    setShowSuggest(false);
-    setPlace(value);
+    setLoadingCity(true);
+    setTimeout(() => {
+      setPlace(city);
+      setCity(city);
+      setCityNameDisplay(city);
+      setShowSuggest(false);
+      setLoadingCity(false);
+    }, 1000);
   }
 
   function handleSubmitSearch(

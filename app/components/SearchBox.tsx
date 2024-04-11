@@ -1,7 +1,7 @@
 import { IoSearch } from "react-icons/io5";
 import { type SearchBarProps } from "./types";
 
-export default function (props: SearchBarProps) {
+export default function SearchBox(props: SearchBarProps) {
   return (
     <form
       action=""

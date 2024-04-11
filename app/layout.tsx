@@ -1,7 +1,6 @@
 'use client'
 
 // import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import {
   QueryClient,
@@ -9,7 +8,6 @@ import {
   useQuery,
 } from "react-query";
 
-const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata: Metadata = {
 //   title: "Weather App",
@@ -25,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <QueryClientProvider client={queryClient}>
-        <body className={inter.className}>{children}</body>
+        <body>{children}</body>
       </QueryClientProvider>
     </html>
   );
