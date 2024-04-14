@@ -1,20 +1,4 @@
-// SearchBarProps type declaration
-
-import {
-  ChangeEventHandler,
-  FormEventHandler,
-} from "react";
-
-export type SearchBarProps = {
-  value: string;
-  onChange:
-    | ChangeEventHandler<HTMLInputElement>
-    | undefined;
-  onSubmit: FormEventHandler<HTMLFormElement> | undefined;
-};
-
 // Weather API response type declaration
-
 export interface WeatherAPI_Res_Type {
   cod: string;
   message: number;
@@ -83,13 +67,53 @@ interface Coord {
   lat: number;
   lon: number;
 }
+// end of Weather API response type
 
-// children prop
-export type InfoBoxProps = {
-  children: React.ReactNode;
+//Geo API response type declaration for suggesting cities in WeatherNavbar component
+export interface CityResponse {
+  data: CitySuggest;
+  status: number;
+  statusText: string;
+  headers: any;
+  config: any;
+  request: any;
+}
+export interface CitySuggest {
+  message: string;
+  cod: string;
+  count: number;
+  list: CityDetailsList[];
+}
+
+export interface CityDetailsList {
+  id: number;
+  name: string;
+  coord: any;
+  main: any;
+  dt: number;
+  wind: any;
+  sys: any;
+  rain: any;
+  snow: any;
+  clouds: any;
+  weather: any;
+}
+//end of Geo API response type
+
+// The rest of types are clear based on their names
+import {
+  ChangeEventHandler,
+  FormEventHandler,
+} from "react";
+
+export type SearchBarProps = {
+  value: string;
+  onChange:
+    | ChangeEventHandler<HTMLInputElement>
+    | undefined;
+  onSubmit: FormEventHandler<HTMLFormElement> | undefined;
 };
 
-// Date Info Component Prop Type
 export type DateInfoProp = {
   dateObj: Date;
 };
@@ -124,37 +148,6 @@ export interface ForecastWeatherDetailsProps
   tempMax: number;
   description: string;
 }
-
-
-export interface CityResponse {
-  data: CitySuggest
-  status: number
-  statusText: string
-  headers: any
-  config: any
-  request: any
-}
-export interface CitySuggest {
-  message: string
-  cod: string
-  count: number
-  list: CityDetailsList[]
-}
-
-export interface CityDetailsList {
-  id: number
-  name: string
-  coord: any
-  main: any
-  dt: number
-  wind: any
-  sys: any
-  rain: any
-  snow: any
-  clouds: any
-  weather: any
-}
-
 export interface SuggestionBoxProps {
   suggestion: string[];
   handleSuggestClick: (item: string) => void;

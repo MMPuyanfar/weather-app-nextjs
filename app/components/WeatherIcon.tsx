@@ -1,6 +1,7 @@
 import Image from "next/image";
 import {type WeatherIconProp } from "./types";
 
+//This component recieve an icon name string and uses it to fetch a weather icon
 export default function WeatherIcon({iconName}: WeatherIconProp) {
   return (
     <div className="relative h-20 w-20">

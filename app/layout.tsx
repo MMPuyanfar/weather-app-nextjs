@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 // import type { Metadata } from "next";
 import "./globals.css";
@@ -7,7 +7,6 @@ import {
   QueryClientProvider,
   useQuery,
 } from "react-query";
-
 
 // export const metadata: Metadata = {
 //   title: "Weather App",

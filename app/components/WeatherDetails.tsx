@@ -51,7 +51,7 @@ export default function WeatherDetails({
       <SingleWeatherDetail
         icon={<MdAir />}
         info="Wind Speed"
-        value={Math.floor(windSpeed * 3.6) + " km/h"}
+        value={Math.floor(windSpeed * 3.6) + " km/h"} //converting m/s to km/h
       />
       <SingleWeatherDetail
         icon={<ImMeter />}

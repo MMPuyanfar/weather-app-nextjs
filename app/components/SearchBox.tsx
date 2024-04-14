@@ -1,22 +1,22 @@
 import { IoSearch } from "react-icons/io5";
 import { type SearchBarProps } from "./types";
 
+//This component is form to enable user change the city they want to see its weather forecast
 export default function SearchBox(props: SearchBarProps) {
   return (
     <form
       action=""
       className="flex relative items-center justify-center h-10"
-      onSubmit={props.onSubmit}
-      autoComplete="off"
+      onSubmit={props.onSubmit} // this function triggers when user click on search icon or hit enter
+      autoComplete="off" // disables browser suggestions according to previous values
     >
-      {/* https://api.openweathermap.org/data/2.5/forecast?q=tehran&appid=e8088829b0d4947e09ae641493599950&cnt=40 */}
       <input
         type="text"
-        spellCheck = 'false'
-        autoComplete="off"
+        spellCheck="false" // disables spellcheck and avoids those red curly lines under the text
+        autoComplete="off" // disables browser suggestions according to previous values
         name="city"
-        value={props.value}
-        onChange={props.onChange}
+        value={props.value} //controlled input value
+        onChange={props.onChange} //both for controlling input value and using the real time input value in Geo API
         placeholder="Search location..."
         className="px-3 py-2 w-48 border border-gray-300 rounded-l-md focus:outline-none focus:border-blue-500 h-full"
       />

@@ -1,5 +1,6 @@
 import { List } from "./types";
 
+//This component shows today temps (now, feels like, min, max)
 interface TodayTempsProps {
   firstData: List | undefined;
 }

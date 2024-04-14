@@ -57,7 +57,6 @@ export default function WeatherApp() {
 
   return (
     <div className="flex flex-col gap-4 bg-gray-100 min-h-screen">
-
       <WeatherNavbar />
 
       {loadingCity ? (
@@ -132,9 +131,8 @@ export default function WeatherApp() {
                 )}
               />
             ))}
-          </section> 
+          </section>
           {/* 5 days forecast section finished */}
-          
         </main>
       )}
     </div>

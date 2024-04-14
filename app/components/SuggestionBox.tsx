@@ -1,5 +1,6 @@
 import { SuggestionBoxProps } from "./types";
 
+//This component is the drop down list that appears after user start typing the city name (according to Geo API)
 export default function SuggestionBox({
   suggestion,
   handleSuggestClick,
@@ -11,13 +12,13 @@ export default function SuggestionBox({
         <li
           key={i}
           className="cursor-pointer p-1 rounded hover:bg-gray-200"
-          onClick={() => handleSuggestClick(s)}
+          onClick={() => handleSuggestClick(s)} // the function do the same for clicking on a suggestion as the app do for submiting the search form via enter or search icon click
         >
           {s}
         </li>
       ))}
       {error && (
-        <li className="text-red-500 p-1">{error}</li>
+        <li className="text-red-500 p-1">{error}</li> // if Geo API didn't suggest any city, shows an error
       )}
     </ul>
   );
