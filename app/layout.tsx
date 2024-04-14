@@ -20,10 +20,13 @@ export default function RootLayout({
 }>) {
   const queryClient = new QueryClient();
   return (
+    <>
+    <title>Weather App</title>
     <html lang="en">
       <QueryClientProvider client={queryClient}>
         <body>{children}</body>
       </QueryClientProvider>
     </html>
+    </>
   );
 }
